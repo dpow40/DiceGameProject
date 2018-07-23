@@ -35,6 +35,8 @@ body {
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    filter: blur(2px);
+     -webkit-filter: blur(2px);
 }
 
 .player-0-panel,
@@ -44,6 +46,31 @@ body {
     height: 600px;
     padding: 100px;
 }
+ .pop-up{
+     position: absolute;
+     background-color: #555;
+     color: #fff;
+     text-align: center;
+     border-radius: 5px;
+     padding: 10px 10px;
+     z-index: 1;
+     width: 650px;
+     left: 27%;
+     top: 20%;
+     
+     
+     
+
+ }
+ .game-rules{
+     text-align: left;
+     line-height: 2em;
+     padding-top: 1em;
+ }
+ .hide{
+     visibility: hidden;
+    margin-left: -999px;
+ }
 
 
 
