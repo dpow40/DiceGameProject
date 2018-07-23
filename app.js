@@ -11,7 +11,6 @@ GAME RULES:
 var scores, roundScore, activePlayer, dice, gamePlaying;
 gamePlaying = true;
 
-swal('Hey');
 newGame();
 
 document.querySelector('.btn-roll').addEventListener('click', () =>{
@@ -101,6 +100,19 @@ function changePlayers(){
 //console.log(x);
 
 document.querySelector('.btn-new').addEventListener('click', newGame);
+
+document.querySelector('.next-button').addEventListener('click', () =>{
+
+    var instructions = document.querySelector('.pop-up');
+    var mainContent = document.querySelector('.wrapper');
+
+    instructions.classList.toggle('hide');
+    mainContent.style.filter = 'none';
+    
+
+
+
+});
 
 
 function newGame(){
