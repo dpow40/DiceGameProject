@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
+
         
         <title>Pig Game</title>
     </head>
@@ -22,8 +23,23 @@
                     </aside>
                     <button class='next-button'>NEXT</button>
 
-                    </div>
                 </div>
+            </div>
+            <div class='game-input hide'>
+                    <form class="game-form">
+                        <label class ="game-label" >PLAYER 1</label>
+                        <input type="text" value="" class="ion-input game-value" placeholder="Joe">
+                        <label class="game-label">PLAYER 2</label>
+                        <input type="text" value="" class="ion-input game-value" placeholder="Steve">
+                        <label class="game-label">WINNING SCORE</label>
+                        <input type="number" value="" class="game-value ion-input" placeholder="50">
+                        
+                        <button class="start-button">START</button>
+
+                    </form>
+
+            </div>
+            
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>

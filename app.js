@@ -8,8 +8,9 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-var scores, roundScore, activePlayer, dice, gamePlaying;
+var scores, roundScore, activePlayer, dice, gamePlaying,count;
 gamePlaying = true;
+count = 0;
 
 newGame();
 
@@ -26,7 +27,7 @@ document.querySelector('.btn-roll').addEventListener('click', () =>{
         var diceDOM = document.querySelector('.dice')
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice +'.png'
-        //3.Update round score if roll was not 1.
+        //3.Update round score if roll was not 1 BUT rolled a six.
         if (dice !== 1)  {
             
             roundScore += dice;
@@ -34,6 +35,14 @@ document.querySelector('.btn-roll').addEventListener('click', () =>{
     
             //document.querySelector('.player-0-panel').classList.remove('.active');
             //document.querySelector('.player-1-panel').classList.add('.active');     
+        } else if(dice === 6){
+            count++;
+            if (count === 2) {
+                document.getElementById('score-' + activePlayer).textContent = '0';
+                document.getElementById('current-' + activePlayer).textContent = '0';
+                changePlayers();
+
+            }
         }
         else {
             //Next Player
@@ -85,6 +94,7 @@ document.querySelector('.btn-hold').addEventListener('click', () =>{
 function changePlayers(){
     activePlayer  == 0? activePlayer = 1 : activePlayer = 0;
 
+        count = 0;
         roundScore = 0;
         document.querySelector('#current-0').textContent = '0';
         document.querySelector('#current-1').textContent = '0';
@@ -104,13 +114,24 @@ document.querySelector('.btn-new').addEventListener('click', newGame);
 document.querySelector('.next-button').addEventListener('click', () =>{
 
     var instructions = document.querySelector('.pop-up');
-    var mainContent = document.querySelector('.wrapper');
+    var gameInput = document.querySelector('.game-input');
 
-    instructions.classList.toggle('hide');
-    mainContent.style.filter = 'none';
+    instructions.classList.add('hide');
+    gameInput.classList.remove('hide');
+    gamePlaying = false;
+    document.querySelector('.next-button').disabled = true; 
+    
     
 
 
+
+});
+
+document.querySelector('.start-button').addEventListener('click',(event) =>{
+    document.querySelector('.game-input').classList.add('hide');
+    gamePlaying = true;
+    document.querySelector('.wrapper').style.filter = 'none';
+    event.preventDefault();
 
 });
 
