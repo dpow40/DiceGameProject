@@ -19,7 +19,7 @@
                             <p> - In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score</p>
                             <p> - BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn</p>
                             <p> - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn</p>
-                            <p> - The first player to reach 100 points on GLOBAL score wins the game</p>
+                            <p> - The first player to reach the winning score on GLOBAL score wins the game</p>
                     </aside>
                     <button class='next-button'>NEXT</button>
 
@@ -28,11 +28,11 @@
             <div class='game-input hide'>
                     <form class="game-form">
                         <label class ="game-label" >PLAYER 1</label>
-                        <input type="text" value="" class="ion-input game-value" placeholder="Joe">
+                        <input type="text" value="" class=" game-value" id="input-name-0" placeholder="Joe">
                         <label class="game-label">PLAYER 2</label>
-                        <input type="text" value="" class="ion-input game-value" placeholder="Steve">
+                        <input type="text" value="" class=" game-value" id="input-name-1" placeholder="Steve">
                         <label class="game-label">WINNING SCORE</label>
-                        <input type="number" value="" class="game-value ion-input" placeholder="50">
+                        <input type="number" value="" class="game-value"   id="win-value" placeholder="50">
                         
                         <button class="start-button">START</button>
 
@@ -63,7 +63,8 @@
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             
-            <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dice-4.png" alt="Dice" class="dice" id="dice-1">
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-2"> 
         </div>
         
         <script src="app.js"></script>
